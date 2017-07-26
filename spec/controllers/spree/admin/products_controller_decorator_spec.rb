@@ -9,7 +9,7 @@ RSpec.describe Spree::Admin::ProductsController, type: :controller do
 
   context 'related' do
     it 'is not routable' do
-      spree_get :related, id: product.id
+      get :related, params: { id: product.id }
       expect(response.status).to be(200)
     end
 
